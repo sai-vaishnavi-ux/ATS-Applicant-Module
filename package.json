@@ -1,0 +1,17 @@
+{
+  "name": "ats-applicant-module",
+  "version": "1.0.0",
+  "description": "Applicant module backend server for ATS",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.90.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.19.2",
+    "multer": "^2.0.2"
+  }
+}

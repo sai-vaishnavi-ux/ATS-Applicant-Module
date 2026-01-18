@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applicant Form – Step 1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-300 font-[Inter]">
+
+  <div class="bg-blue-600 text-white text-center py-4 text-lg font-medium">
+    Applicant Details
+  </div>
+
+  <p class="text-center mt-3 text-sm text-gray-700">
+    Step 1 of 2 – Personal Information
+  </p>
+
+  <div class="flex justify-center mt-6">
+    <div class="bg-white rounded-xl shadow-md w-[420px] p-8">
+
+      <form id="formStep1" class="space-y-4">
+
+        <div>
+          <label for="name" class="text-sm font-medium">Full Name *</label>
+          <input id="name" name="name" placeholder="Enter full name" required
+            aria-label="Full Name"
+            class="w-full p-2 border rounded">
+        </div>
+
+        <div>
+          <label for="dob" class="text-sm font-medium">Date of Birth *</label>
+          <input id="dob" name="dob" type="date" required
+            aria-label="Date of Birth"
+            class="w-full p-2 border rounded">
+        </div>
+
+        <div>
+          <label for="email" class="text-sm font-medium">Email *</label>
+          <input id="email" name="email" type="email" placeholder="Enter email"
+            required aria-label="Email"
+            class="w-full p-2 border rounded">
+        </div>
+
+        <div>
+          <label for="degree" class="text-sm font-medium">Highest Education *</label>
+          <select id="degree" name="degree" required aria-label="Highest Education"
+            class="w-full p-2 border rounded">
+            <option value="">Select</option>
+            <option>Secondary School</option>
+            <option>High School</option>
+            <option>Bachelor</option>
+            <option>Master</option>
+            <option>PhD</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="experience" class="text-sm font-medium">Years of Experience *</label>
+          <input id="experience" name="experience" type="number" placeholder="e.g. 2"
+            required aria-label="Years of Experience"
+            class="w-full p-2 border rounded">
+        </div>
+
+        <div>
+          <label for="course" class="text-sm font-medium">Preferred Course *</label>
+          <select id="course" name="course" required aria-label="Preferred Course"
+            class="w-full p-2 border rounded">
+            <option value="">Select</option>
+            <option>N5</option>
+            <option>N4</option>
+            <option>N3</option>
+            <option>N2</option>
+            <option>N1</option>
+          </select>
+        </div>
+
+        <div class="flex justify-end">
+          <button type="submit"
+            class="bg-blue-600 text-white px-4 py-2 rounded text-sm">
+            Next →
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+<script>
+document.getElementById("formStep1").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const data = {
+    name: name.value,
+    dob: dob.value,
+    email: email.value,
+    degree: degree.value,
+    experience: experience.value,
+    course: course.value
+  };
+
+  localStorage.setItem("formData", JSON.stringify(data));
+  window.location.href = "form2.html";
+});
+</script>
+
+</body>
+</html>

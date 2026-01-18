@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Submitted</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-200 flex items-center justify-center min-h-screen">
+
+  <div class="text-center">
+    <div class="bg-blue-600 text-white p-6 rounded mb-6">
+      <p class="text-lg font-medium">Application Received</p>
+      <p class="text-sm mt-2">Thank you for applying.</p>
+      <p class="text-sm">Check your email for confirmation.</p>
+
+      <!-- dynamic code -->
+      <p id="appCode" class="text-xs mt-2"></p>
+    </div>
+
+    <a href="#" class="bg-green-400 px-6 py-3 rounded inline-block">
+      Check Application Status
+    </a>
+  </div>
+
+<script>
+  const code = localStorage.getItem("application_code");
+
+  if (code) {
+    document.getElementById("appCode").innerText =
+      "Application ID: " + code;
+  } else {
+    document.getElementById("appCode").innerText =
+      "Application submitted successfully";
+  }
+</script>
+
+</body>
+</html>
